@@ -8,6 +8,7 @@ import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.ISubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.localization.RelicStrings;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,6 +32,6 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
 
     @Override
     public void receiveEditStrings() {
-        BaseMod.loadCustomStringsFile(HolyGrail.class, "lang/relics/HolyGrail_zh.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "lang/relics/HolyGrail_zh.json");
     }
 }
