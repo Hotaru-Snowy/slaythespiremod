@@ -1,0 +1,14 @@
+{
+  "modid": "examplemod",
+  "name": "examplemod",
+  "author_list": [
+    "Dobe"
+  ],
+  "description": "Example mod.1",
+  "dependencies": [
+    "basemod"
+  ],
+  "version": "0.0.1",
+  "sts_version": "01-14-2020",
+  "mts_version": "3.30.0"
+}
