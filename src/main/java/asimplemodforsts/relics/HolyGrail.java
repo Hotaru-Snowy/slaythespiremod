@@ -21,7 +21,7 @@ public class HolyGrail extends CustomRelic {
     public void atTurnStart(){
         flash();
         addToBot((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature) AbstractDungeon.player, this));
-        addToBot((AbstractGameAction)new GainEnergyAction(1));
+        addToBot((AbstractGameAction)new GainEnergyAction(3));
     }
 
     public AbstractRelic makeCopy() {
