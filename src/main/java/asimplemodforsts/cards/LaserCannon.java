@@ -1,7 +1,6 @@
 package asimplemodforsts.cards;
 
 import asimplemodforsts.ResourceLib;
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -37,6 +36,7 @@ public class LaserCannon extends AbstractRedSignCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        super.use(p,m);
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
                 new DamageInfo(p,damage,DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
