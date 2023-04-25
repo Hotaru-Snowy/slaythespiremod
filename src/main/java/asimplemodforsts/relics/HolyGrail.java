@@ -1,33 +1,39 @@
 package asimplemodforsts.relics;
 
+import asimplemodforsts.ResourceLib;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.RedSkull;
 
+//遗物类：圣杯
 public class HolyGrail extends CustomRelic {
+    //注册ID
     public static final String ID="holy_grail";
-
+    private static final Texture img = ImageMaster.loadImage(ResourceLib.RELICIMGPATH +ID+".png");
+    //遗物构造方法
     public HolyGrail() {
-        super(ID, ImageMaster.loadImage("images/relics/holy_grail.png"), AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.SOLID);
+        super(ID, img, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.SOLID);
     }
+
+    //回合开始时调用
     @Override
     public void atTurnStart(){
+        //动画
         flash();
-        addToBot((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature) AbstractDungeon.player, this));
-        addToBot((AbstractGameAction)new GainEnergyAction(3));
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        //加三费用
+        addToBot(new GainEnergyAction(3));
     }
+    //更新描述
     @Override
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
     }
+    //复制方法
     @Override
     public AbstractRelic makeCopy() {
         return new HolyGrail();
