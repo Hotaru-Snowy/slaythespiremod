@@ -2,6 +2,7 @@ package asimplemodforsts;
 
 import asimplemodforsts.cards.LaserCannon;
 import asimplemodforsts.characters.Liv;
+import asimplemodforsts.pathes.AbstractCardEnum;
 import asimplemodforsts.pathes.LivmodClassEnum;
 import asimplemodforsts.relics.HolyGrail;
 import basemod.BaseMod;
@@ -10,8 +11,9 @@ import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import org.apache.logging.log4j.Level;
@@ -23,11 +25,21 @@ import org.apache.logging.log4j.Logger;
 public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditCardsSubscriber, EditCharactersSubscriber {
     //消息处理器
     private static final Logger logger = LogManager.getLogger(Main.class);
-    private static final String MY_CHARACTER_BUTTON = "img/charSelect/SelesButton.png";
-    private static final String MARISA_PORTRAIT = "img/charSelect/SelesPortrait.png";
+    public static final Color PINK = CardHelper.getColor(255, 192, 203);
     //构造方法，初始化构造器
     public Main(){
         BaseMod.subscribe(this);
+        BaseMod.addColor(AbstractCardEnum.Liv_COLOR,
+                PINK, PINK, PINK, PINK, PINK, PINK, PINK,
+                "images/512/bg_attack_default_gray.png",
+                "images/512/bg_skill_default_gray.png",
+                "images/512/bg_power_default_gray.png",
+                "images/512/energy_ball.png",
+                "images/1024/bg_attack_default_gray.png",
+                "images/1024/bg_skill_default_gray.png",
+                "images/1024/bg_power_default_gray.png",
+                "images/1024/energy_ball.png",
+                "images/512/energy_orb.png");
     }
 
     //初始化，注册这个类时调用的方法
@@ -57,6 +69,6 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
 
     @Override
     public void receiveEditCharacters() {
-        BaseMod.addCharacter((AbstractPlayer)new Liv(), MY_CHARACTER_BUTTON, MARISA_PORTRAIT, LivmodClassEnum.Liv_CLASS);
+        BaseMod.addCharacter(new Liv(), ResourceLib.CHARAIMGPATH+Liv.name+"/liv_button.png", ResourceLib.CHARAIMGPATH+Liv.name+"/liv_bg.png", LivmodClassEnum.Liv_CLASS);
     }
 }

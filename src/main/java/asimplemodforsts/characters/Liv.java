@@ -1,5 +1,7 @@
 package asimplemodforsts.characters;
 
+import asimplemodforsts.ResourceLib;
+import asimplemodforsts.cards.LaserCannon;
 import asimplemodforsts.pathes.AbstractCardEnum;
 import asimplemodforsts.pathes.LivmodClassEnum;
 import basemod.abstracts.CustomPlayer;
@@ -8,11 +10,13 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.events.beyond.SpireHeart;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -22,13 +26,24 @@ public class Liv extends CustomPlayer {
     public static final String name ="Liv";
     public static final int ENERGY_PER_TURN = 3;
     //以下图片依次作用为[篝火休息处的角色背影2，篝火休息处的角色背影1，角色死亡后倒下的图片，角色平常站立时的图片]
-    private static final String SELES_SHOULDER_2 = "img/char_Seles/shoulder2.png";
-    private static final String SELES_SHOULDER_1 = "img/char_Seles/shoulder1.png";
-    private static final String SELES_CORPSE = "img/char_Seles/fallen.png";
-    private static final String SELES_STAND = "img/char_Seles/Seles.png";
+    private static final String SELES_SHOULDER_2 = ResourceLib.CHARAIMGPATH+name+"/liv_shoulder2.png";
+    private static final String SELES_SHOULDER_1 = ResourceLib.CHARAIMGPATH+name+"/liv_shoulder1.png";
+    private static final String SELES_CORPSE = ResourceLib.CHARAIMGPATH+name+"/liv_fallen.png";
+    private static final String SELES_STAND = ResourceLib.CHARAIMGPATH+name+"/liv_stand.png";
     //各种素材，不是很懂
-    private static final String[] ORB_TEXTURES = new String[] { "img/UI_Seles/EPanel/layer5.png", "img/UI_Seles/EPanel/layer4.png", "img/UI_Seles/EPanel/layer3.png", "img/UI_Seles/EPanel/layer2.png", "img/UI_Seles/EPanel/layer1.png", "img/UI_Seles/EPanel/layer0.png", "img/UI_Seles/EPanel/layer5d.png", "img/UI_Seles/EPanel/layer4d.png", "img/UI_Seles/EPanel/layer3d.png", "img/UI_Seles/EPanel/layer2d.png", "img/UI_Seles/EPanel/layer1d.png" };
-    private static final String ORB_VFX = "img/UI_Seles/energyBlueVFX.png";
+    private static final String[] ORB_TEXTURES = new String[] {
+            ResourceLib.CHARAIMGPATH+name+"/1.png",
+            ResourceLib.CHARAIMGPATH+name+"/2.png",
+            ResourceLib.CHARAIMGPATH+name+"/3.png",
+            ResourceLib.CHARAIMGPATH+name+"/4.png",
+            ResourceLib.CHARAIMGPATH+name+"/5.png",
+            ResourceLib.CHARAIMGPATH+name+"/6.png",
+            ResourceLib.CHARAIMGPATH+name+"/2.png",
+            ResourceLib.CHARAIMGPATH+name+"/3.png",
+            ResourceLib.CHARAIMGPATH+name+"/4.png",
+            ResourceLib.CHARAIMGPATH+name+"/5.png",
+            ResourceLib.CHARAIMGPATH+name+"/6.png" };
+    private static final String ORB_VFX = ResourceLib.CHARAIMGPATH+name+"/vfx.png";
     private static final float[] LAYER_SPEED = new float[] { -40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F };
 
     private static final int STARTING_HP = 75;
@@ -100,18 +115,16 @@ public class Liv extends CustomPlayer {
     @Override
     public AbstractCard getStartCardForEvent() {
         //添加除了攻防以外的初始卡（每日挑战混合那几张）
-        return null;
+        return new LaserCannon();
     }
 
     @Override
     public Color getCardTrailColor() {
-        //
         return PINK;
     }
 
     @Override
     public int getAscensionMaxHPLoss() {
-        //
         return ASCENSION_MAX_HP_LOSS;
     }
 
@@ -123,12 +136,13 @@ public class Liv extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-
+        CardCrawlGame.sound.play("POWER_MANTRA", 0.05F);
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, true);
     }
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return null;
+        return "ATTACK_HEAVY";
     }
 
     @Override

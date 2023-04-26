@@ -1,6 +1,5 @@
 package asimplemodforsts.cards;
 
-import asimplemodforsts.actions.ResetSignCardAction;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

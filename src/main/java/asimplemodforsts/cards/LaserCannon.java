@@ -1,6 +1,7 @@
 package asimplemodforsts.cards;
 
 import asimplemodforsts.ResourceLib;
+import asimplemodforsts.pathes.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,7 +23,7 @@ public class LaserCannon extends AbstractRedSignCard{
     private static final int UPGRADE_PLUS_DAMAGE = 2;
 
     public LaserCannon() {
-        super(ID, NAME, IMGPATH, COST, DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, NAME, IMGPATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.Liv_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = BASIC_DAMAGE;
     }
 
