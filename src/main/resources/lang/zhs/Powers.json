@@ -1,0 +1,9 @@
+{
+  "redsignpower": {
+    "NAME": "红色信号球",
+    "DESCRIPTIONS": [
+      "现在 #r红色信号球 有 #b",
+      " 层。"
+    ]
+  }
+}

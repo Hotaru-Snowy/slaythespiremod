@@ -1,6 +1,8 @@
 package asimplemodforsts;
 
-import asimplemodforsts.cards.LaserCannon;
+import asimplemodforsts.cards.basic.Defend_Pink;
+import asimplemodforsts.cards.basic.Strike_Pink;
+import asimplemodforsts.cards.common.LaserCannon;
 import asimplemodforsts.characters.Liv;
 import asimplemodforsts.pathes.AbstractCardEnum;
 import asimplemodforsts.pathes.LivmodClassEnum;
@@ -15,6 +17,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -22,7 +25,7 @@ import org.apache.logging.log4j.Logger;
 
 //使用注解注册这个类
 @SpireInitializer
-public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditCardsSubscriber, EditCharactersSubscriber {
+public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditCardsSubscriber, EditCharactersSubscriber{
     //消息处理器
     private static final Logger logger = LogManager.getLogger(Main.class);
     public static final Color PINK = CardHelper.getColor(255, 192, 203);
@@ -51,6 +54,8 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
     @Override
     public void receiveEditCards() {
         BaseMod.addCard(new LaserCannon());
+        BaseMod.addCard(new Strike_Pink());
+        BaseMod.addCard(new Defend_Pink());
     }
 
     //注册遗物
@@ -63,8 +68,9 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
     //注册语言文件
     @Override
     public void receiveEditStrings() {
-        BaseMod.loadCustomStringsFile(RelicStrings.class, ResourceLib.LANGZHSPATH+"Relics.json");
-        BaseMod.loadCustomStringsFile(CardStrings.class, ResourceLib.LANGZHSPATH+"Cards.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, ResourceLib.langFilePath("Relics"));
+        BaseMod.loadCustomStringsFile(CardStrings.class, ResourceLib.langFilePath("Cards"));
+        BaseMod.loadCustomStringsFile(PowerStrings.class, ResourceLib.langFilePath("Powers"));
     }
 
     @Override

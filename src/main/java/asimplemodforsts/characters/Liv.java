@@ -1,7 +1,7 @@
 package asimplemodforsts.characters;
 
 import asimplemodforsts.ResourceLib;
-import asimplemodforsts.cards.LaserCannon;
+import asimplemodforsts.cards.common.LaserCannon;
 import asimplemodforsts.pathes.AbstractCardEnum;
 import asimplemodforsts.pathes.LivmodClassEnum;
 import basemod.abstracts.CustomPlayer;
@@ -32,18 +32,18 @@ public class Liv extends CustomPlayer {
     private static final String SELES_STAND = ResourceLib.CHARAIMGPATH+name+"/liv_stand.png";
     //各种素材，不是很懂
     private static final String[] ORB_TEXTURES = new String[] {
-            ResourceLib.CHARAIMGPATH+name+"/1.png",
-            ResourceLib.CHARAIMGPATH+name+"/2.png",
-            ResourceLib.CHARAIMGPATH+name+"/3.png",
-            ResourceLib.CHARAIMGPATH+name+"/4.png",
-            ResourceLib.CHARAIMGPATH+name+"/5.png",
-            ResourceLib.CHARAIMGPATH+name+"/6.png",
-            ResourceLib.CHARAIMGPATH+name+"/2.png",
-            ResourceLib.CHARAIMGPATH+name+"/3.png",
-            ResourceLib.CHARAIMGPATH+name+"/4.png",
-            ResourceLib.CHARAIMGPATH+name+"/5.png",
-            ResourceLib.CHARAIMGPATH+name+"/6.png" };
-    private static final String ORB_VFX = ResourceLib.CHARAIMGPATH+name+"/vfx.png";
+            ResourceLib.livImagePath("1"),
+            ResourceLib.livImagePath("2"),
+            ResourceLib.livImagePath("3"),
+            ResourceLib.livImagePath("4"),
+            ResourceLib.livImagePath("5"),
+            ResourceLib.livImagePath("6"),
+            ResourceLib.livImagePath("2"),
+            ResourceLib.livImagePath("3"),
+            ResourceLib.livImagePath("4"),
+            ResourceLib.livImagePath("5"),
+            ResourceLib.livImagePath("6"), };
+    private static final String ORB_VFX = ResourceLib.livImagePath("vfx");
     private static final float[] LAYER_SPEED = new float[] { -40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F };
 
     private static final int STARTING_HP = 75;
@@ -68,9 +68,14 @@ public class Liv extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         //初始卡组，暂时只有这玩意
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("laser_cannon");
-        retVal.add("laser_cannon");
-        retVal.add("laser_cannon");
+        retVal.add("strike_pink");
+        retVal.add("strike_pink");
+        retVal.add("strike_pink");
+        retVal.add("strike_pink");
+        retVal.add("defend_pink");
+        retVal.add("defend_pink");
+        retVal.add("defend_pink");
+        retVal.add("defend_pink");
         retVal.add("laser_cannon");
         retVal.add("laser_cannon");
         return retVal;

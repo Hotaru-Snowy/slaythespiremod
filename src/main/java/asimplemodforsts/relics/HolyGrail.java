@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 public class HolyGrail extends CustomRelic {
     //注册ID
     public static final String ID="holy_grail";
-    private static final Texture img = ImageMaster.loadImage(ResourceLib.RELICIMGPATH +ID+".png");
+    private static final Texture img = ImageMaster.loadImage(ResourceLib.relicImagePath(ID));
     //遗物构造方法
     public HolyGrail() {
         super(ID, img, AbstractRelic.RelicTier.RARE, AbstractRelic.LandingSound.SOLID);

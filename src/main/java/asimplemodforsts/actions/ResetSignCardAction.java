@@ -1,6 +1,6 @@
 package asimplemodforsts.actions;
 
-import asimplemodforsts.cards.AbstractSignCard;
+import asimplemodforsts.cards.common.AbstractSignCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
 public class ResetSignCardAction extends AbstractGameAction {
@@ -10,6 +10,5 @@ public class ResetSignCardAction extends AbstractGameAction {
     }
     @Override
     public void update() {
-        card.directly=true;
     }
 }
