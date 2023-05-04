@@ -1,6 +1,7 @@
 package asimplemodforsts;
 
 import asimplemodforsts.cards.basic.Defend_Pink;
+import asimplemodforsts.cards.basic.Dodge_Pink;
 import asimplemodforsts.cards.basic.Strike_Pink;
 import asimplemodforsts.cards.common.LaserCannon;
 import asimplemodforsts.characters.Liv;
@@ -56,6 +57,7 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
         BaseMod.addCard(new LaserCannon());
         BaseMod.addCard(new Strike_Pink());
         BaseMod.addCard(new Defend_Pink());
+        BaseMod.addCard(new Dodge_Pink());
     }
 
     //注册遗物

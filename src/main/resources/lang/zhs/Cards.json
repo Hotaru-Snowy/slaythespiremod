@@ -10,5 +10,9 @@
   "defend_pink": {
     "NAME": "防御",
     "DESCRIPTION": "获得 !B! 点格挡 。"
+  },
+  "dodge_pink": {
+    "NAME": "闪避",
+    "DESCRIPTION": "躲开一次伤害。"
   }
 }
