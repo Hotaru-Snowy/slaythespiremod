@@ -22,6 +22,7 @@ public class Strike_Pink extends CustomCard {
     private static final int COST = 1;
     private static final int BASIC_DAMAGE = 6;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
+
     public Strike_Pink() {
         super(ID, NAME, IMGPATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.Liv_COLOR, CardRarity.BASIC, CardTarget.ENEMY);
         tags.add(AbstractCard.CardTags.STRIKE);
