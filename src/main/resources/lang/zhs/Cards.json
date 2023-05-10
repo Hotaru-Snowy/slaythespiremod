@@ -1,7 +1,7 @@
 {
   "laser_cannon": {
     "NAME": "炮击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 保留 。"
+    "DESCRIPTION": " 红色信号球 保留 NL 造成 !D! 点伤害。 NL 三消 造成三倍伤害。"
   },
   "strike_pink": {
     "NAME": "打击",
@@ -13,6 +13,6 @@
   },
   "dodge_pink": {
     "NAME": "闪避",
-    "DESCRIPTION": "躲开一次伤害。"
+    "DESCRIPTION": "本回合闪避一次伤害，如果成功闪避获得 超算空间 。"
   }
 }

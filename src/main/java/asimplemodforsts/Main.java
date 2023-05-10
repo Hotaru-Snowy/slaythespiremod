@@ -10,23 +10,25 @@ import asimplemodforsts.pathes.LivmodClassEnum;
 import asimplemodforsts.relics.HolyGrail;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.*;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.Keyword;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.nio.charset.StandardCharsets;
+
 //使用注解注册这个类
 @SpireInitializer
-public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditCardsSubscriber, EditCharactersSubscriber{
+public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditCardsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber {
     //消息处理器
     private static final Logger logger = LogManager.getLogger(Main.class);
     public static final Color PINK = CardHelper.getColor(255, 192, 203);
@@ -75,8 +77,23 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
         BaseMod.loadCustomStringsFile(PowerStrings.class, ResourceLib.langFilePath("Powers"));
     }
 
+    //注册角色
     @Override
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new Liv(), ResourceLib.CHARAIMGPATH+Liv.name+"/liv_button.png", ResourceLib.CHARAIMGPATH+Liv.name+"/liv_bg.png", LivmodClassEnum.Liv_CLASS);
+    }
+
+    //注册关键词
+    @Override
+    public void receiveEditKeywords() {
+        Keywords keywords = new Gson().fromJson(loadJson(ResourceLib.langFilePath("KeyWords")), Keywords.class);
+        for(Keyword k : keywords.keywords)
+            BaseMod.addKeyword(k.NAMES, k.DESCRIPTION);
+    }
+    private static String loadJson(String jsonPath) {
+        return Gdx.files.internal(jsonPath).readString(String.valueOf(StandardCharsets.UTF_8));
+    }
+    class Keywords {
+        Keyword[] keywords;
     }
 }

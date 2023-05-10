@@ -1,5 +1,5 @@
 {
-  "redsignpower": {
+  "RedSignPower": {
     "NAME": "红色信号球",
     "DESCRIPTIONS": [
       "现在 #r红色信号球 有 #b",
@@ -9,15 +9,13 @@
   "DodgePower": {
     "NAME": "闪避",
     "DESCRIPTIONS": [
-      "闪避",
-      "次任何形式的攻击"
+      "本回合闪避一次伤害，如果成功闪避获得 超算空间 "
     ]
   },
   "ComboPurePower": {
-    "NAME": "纯色信号球",
+    "NAME": "超算空间",
     "DESCRIPTIONS": [
-      "可以当作任意颜色信号球使用",
-      "次的触发连击技能"
+      "本回合使用的下一个信号球直接视为 三消 "
     ]
   }
 }

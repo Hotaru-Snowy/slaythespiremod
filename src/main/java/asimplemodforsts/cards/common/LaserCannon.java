@@ -36,15 +36,22 @@ public class LaserCannon extends AbstractRedSignCard{
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        super.use(p,m);
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                new DamageInfo(p,damage,DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-    }
-    @Override
     public AbstractCard makeCopy() {
         //复制卡牌时触发
         return new LaserCannon();
+    }
+
+    @Override
+    public void tripleSignUse(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
+                new DamageInfo(p,damage*3,DamageInfo.DamageType.NORMAL),
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+    }
+
+    @Override
+    public void normalUse(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
+                new DamageInfo(p,damage,DamageInfo.DamageType.NORMAL),
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 }

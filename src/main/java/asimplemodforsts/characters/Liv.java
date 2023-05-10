@@ -71,7 +71,7 @@ public class Liv extends CustomPlayer {
         retVal.add("strike_pink");
         retVal.add("strike_pink");
         retVal.add("strike_pink");
-        retVal.add("dodge_Pink");
+        retVal.add("dodge_pink");
         retVal.add("defend_pink");
         retVal.add("defend_pink");
         retVal.add("defend_pink");
