@@ -1,7 +1,7 @@
 {
   "laser_cannon": {
     "NAME": "炮击",
-    "DESCRIPTION": " 红色信号球 保留 NL 造成 !D! 点伤害。 NL 三消 造成三倍伤害。"
+    "DESCRIPTION": " 红色信号球  保留 NL 造成 !D! 点伤害。 NL 三消 造成三倍伤害。"
   },
   "strike_pink": {
     "NAME": "打击",

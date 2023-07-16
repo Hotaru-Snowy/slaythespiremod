@@ -6,6 +6,20 @@
       " 层。"
     ]
   },
+  "BlueSignPower": {
+    "NAME": "蓝色信号球",
+    "DESCRIPTIONS": [
+      "现在 #r蓝色信号球 有 #b",
+      " 层。"
+    ]
+  },
+  "YellowSignPower": {
+    "NAME": "黄色信号球",
+    "DESCRIPTIONS": [
+      "现在 #r黄色信号球 有 #b",
+      " 层。"
+    ]
+  },
   "DodgePower": {
     "NAME": "闪避",
     "DESCRIPTIONS": [
