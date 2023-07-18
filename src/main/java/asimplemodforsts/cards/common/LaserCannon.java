@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -23,7 +22,7 @@ public class LaserCannon extends AbstractRedSignCard{
     private static final int UPGRADE_PLUS_DAMAGE = 2;
 
     public LaserCannon() {
-        super(ID, NAME, IMGPATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.Liv_COLOR, CardRarity.BASIC, CardTarget.ENEMY);
+        super(ID, NAME, IMGPATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.Liv_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = BASIC_DAMAGE;
     }
 
@@ -43,15 +42,11 @@ public class LaserCannon extends AbstractRedSignCard{
 
     @Override
     public void tripleSignUse(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                new DamageInfo(p,damage*3,DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new DamageAction(m, new DamageInfo(p,damage*3,DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 
     @Override
     public void normalUse(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                new DamageInfo(p,damage,DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new DamageAction(m, new DamageInfo(p,damage,DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
     }
 }

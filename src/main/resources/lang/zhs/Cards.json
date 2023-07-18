@@ -1,7 +1,7 @@
 {
   "laser_cannon": {
     "NAME": "炮击",
-    "DESCRIPTION": " 红色信号球  保留 NL 造成 !D! 点伤害。 NL 三消 造成三倍伤害。"
+    "DESCRIPTION": " 红色信号球 NL 造成 !D! 点伤害。 NL 三消 造成三倍伤害。 NL 保留 "
   },
   "strike_pink": {
     "NAME": "打击",
@@ -14,5 +14,13 @@
   "dodge_pink": {
     "NAME": "闪避",
     "DESCRIPTION": "本回合闪避一次伤害，如果成功闪避获得 超算空间 。"
+  },
+  "black_hole": {
+    "NAME": "黑洞",
+    "DESCRIPTION": " 黄色信号球 NL 对所有敌人造成 !D! 点伤害。 NL 三消 额外再给予 !M! 层 虚弱 。 NL 给予 !M! 层 易伤。 NL 保留 "
+  },
+  "liv_shield": {
+    "NAME": "丽芙领域",
+    "DESCRIPTION": " 蓝色信号球 NL 获得 !B! 点格挡。 NL 三消 回复 !B! 生命，多余的部分转换为双倍的格挡。 NL 保留 "
   }
 }

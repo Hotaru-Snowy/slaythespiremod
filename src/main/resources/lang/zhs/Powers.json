@@ -31,5 +31,11 @@
     "DESCRIPTIONS": [
       "本回合使用的下一个信号球直接视为 三消 "
     ]
+  },
+  "HealPointPower": {
+    "NAME": "丽芙点数",
+    "DESCRIPTIONS": [
+      "多余的丽芙点数将转化为双倍格挡值"
+    ]
   }
 }

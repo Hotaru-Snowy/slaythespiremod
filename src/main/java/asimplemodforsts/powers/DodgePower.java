@@ -27,10 +27,10 @@ public class DodgePower extends AbstractPower {
     }
 
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if (damageAmount >= 0) {
-            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
+        if (damageAmount > 0 || damageAmount==0 && owner.currentBlock==0) {
+            addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
             //创建纯色信号球
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new ComboPurePower(this.owner)));
+            addToBot(new ApplyPowerAction(owner, owner, new ComboPurePower(owner)));
         }
         return 0;
     }

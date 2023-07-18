@@ -3,7 +3,9 @@ package asimplemodforsts;
 import asimplemodforsts.cards.basic.Defend_Pink;
 import asimplemodforsts.cards.basic.Dodge_Pink;
 import asimplemodforsts.cards.basic.Strike_Pink;
+import asimplemodforsts.cards.common.BlackHole;
 import asimplemodforsts.cards.common.LaserCannon;
+import asimplemodforsts.cards.common.LivShield;
 import asimplemodforsts.characters.Liv;
 import asimplemodforsts.pathes.AbstractCardEnum;
 import asimplemodforsts.pathes.LivmodClassEnum;
@@ -34,6 +36,11 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
     public static final Color PINK = CardHelper.getColor(255, 192, 203);
     //构造方法，初始化构造器
     public Main(){
+        try {
+            Class.forName("asimplemodforsts.utils.GlobalList");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         BaseMod.subscribe(this);
         BaseMod.addColor(AbstractCardEnum.Liv_COLOR,
                 PINK, PINK, PINK, PINK, PINK, PINK, PINK,
@@ -60,6 +67,8 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
         BaseMod.addCard(new Strike_Pink());
         BaseMod.addCard(new Defend_Pink());
         BaseMod.addCard(new Dodge_Pink());
+        BaseMod.addCard(new BlackHole());
+        BaseMod.addCard(new LivShield());
     }
 
     //注册遗物
