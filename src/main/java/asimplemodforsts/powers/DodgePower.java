@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class DodgePower extends AbstractPower {
     public static final String POWER_ID = "DodgePower";
-    private static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings("DodgePower");
+    private static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME =POWER_STRINGS.NAME;
     public static final String[] DESCRIPTIONS=POWER_STRINGS.DESCRIPTIONS;
 

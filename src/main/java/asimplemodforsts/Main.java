@@ -6,6 +6,8 @@ import asimplemodforsts.cards.basic.Strike_Pink;
 import asimplemodforsts.cards.common.BlackHole;
 import asimplemodforsts.cards.common.LaserCannon;
 import asimplemodforsts.cards.common.LivShield;
+import asimplemodforsts.cards.rare.SignalFill;
+import asimplemodforsts.cards.uncommon.CombatSupport;
 import asimplemodforsts.characters.Liv;
 import asimplemodforsts.pathes.AbstractCardEnum;
 import asimplemodforsts.pathes.LivmodClassEnum;
@@ -69,6 +71,9 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
         BaseMod.addCard(new Dodge_Pink());
         BaseMod.addCard(new BlackHole());
         BaseMod.addCard(new LivShield());
+        BaseMod.addCard(new SignalFill());
+        BaseMod.addCard(new CombatSupport());
+
     }
 
     //注册遗物

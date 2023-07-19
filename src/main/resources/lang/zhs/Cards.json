@@ -1,7 +1,7 @@
 {
   "laser_cannon": {
     "NAME": "炮击",
-    "DESCRIPTION": " 红色信号球 NL 造成 !D! 点伤害。 NL 三消 造成三倍伤害。 NL 保留 "
+    "DESCRIPTION": " 红色信号 保留 NL 造成 !D! 点伤害。 NL 三消 造成三倍伤害。"
   },
   "strike_pink": {
     "NAME": "打击",
@@ -17,10 +17,18 @@
   },
   "black_hole": {
     "NAME": "黑洞",
-    "DESCRIPTION": " 黄色信号球 NL 对所有敌人造成 !D! 点伤害。 NL 三消 额外再给予 !M! 层 虚弱 。 NL 给予 !M! 层 易伤。 NL 保留 "
+    "DESCRIPTION": " 黄色信号 保留 NL 对所有敌人造成 !D! 点伤害。 NL 三消 额外再给予 !M! 层 虚弱 。 NL 给予 !M! 层 易伤 。"
   },
   "liv_shield": {
     "NAME": "丽芙领域",
-    "DESCRIPTION": " 蓝色信号球 NL 获得 !B! 点格挡。 NL 三消 回复 !B! 生命，多余的部分转换为双倍的格挡。 NL 保留 "
+    "DESCRIPTION": " 蓝色信号 保留 NL 获得 !B! 点格挡。 NL 三消 回复 !B! 生命，多余的部分转换为双倍的格挡。"
+  },
+  "signal_fill": {
+    "NAME": "信号补充",
+    "DESCRIPTION": "只有在拥有一个 信号 时才能使用。 NL 获得一个当前所拥有的 信号 。"
+  },
+  "combat_support": {
+    "NAME": "战场支援",
+    "DESCRIPTION": "你每使用 !M! 张非 信号 攻击牌，增加一张随机的当前持有的 信号 牌的复制品到手牌中。"
   }
 }
