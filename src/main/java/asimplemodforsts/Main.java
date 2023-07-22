@@ -8,6 +8,7 @@ import asimplemodforsts.cards.common.LaserCannon;
 import asimplemodforsts.cards.common.LivShield;
 import asimplemodforsts.cards.rare.SignalFill;
 import asimplemodforsts.cards.uncommon.CombatSupport;
+import asimplemodforsts.cards.uncommon.DivinePrayer;
 import asimplemodforsts.characters.Liv;
 import asimplemodforsts.pathes.AbstractCardEnum;
 import asimplemodforsts.pathes.LivmodClassEnum;
@@ -73,6 +74,7 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
         BaseMod.addCard(new LivShield());
         BaseMod.addCard(new SignalFill());
         BaseMod.addCard(new CombatSupport());
+        BaseMod.addCard(new DivinePrayer());
 
     }
 
