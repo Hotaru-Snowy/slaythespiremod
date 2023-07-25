@@ -5,8 +5,6 @@ import asimplemodforsts.actions.BurnLoseHpAction;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.unique.PoisonLoseHpAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,7 +12,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 public class BurnPower extends AbstractPower {
         public static final String POWER_ID = "BurnPower";
@@ -48,7 +45,7 @@ public class BurnPower extends AbstractPower {
             CardCrawlGame.sound.play("CARD_BURN", 0.05F);
         }
 
-    public void stackPower(int stackAmount) {
+        public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
     }
 

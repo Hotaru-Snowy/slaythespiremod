@@ -114,4 +114,7 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
     class Keywords {
         Keyword[] keywords;
     }
+    public static void log(String msg){
+        logger.log(Level.INFO,msg);
+    }
 }

@@ -1,23 +1,17 @@
 package asimplemodforsts.cards.common;
 
 import asimplemodforsts.ResourceLib;
+import asimplemodforsts.actions.BurnAttackAction;
 import asimplemodforsts.pathes.AbstractCardEnum;
-import asimplemodforsts.powers.BurnPower;
-import basemod.devcommands.power.Power;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class PurityOath extends AbstractYellowSignCard {
@@ -49,8 +43,7 @@ public class PurityOath extends AbstractYellowSignCard {
 
     @Override
     public void normalUse(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        addToBot(new ApplyPowerAction(m, p, new BurnPower(m, p, this.damage/2), this.damage/2));
+        addToBot(new BurnAttackAction(m,new DamageInfo(p,damage,damageTypeForTurn)));
         addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
     }
 

@@ -34,8 +34,8 @@ public class ComboPurePower extends AbstractPower {
     }
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         if (damageAmount > 0)
-            addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
-        return 0;
+            addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
+        return damageAmount;
     }
     public void atStartOfTurn() {   //在下一个回合开始后自动消除
         if(turnCount==0)addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, ID));

@@ -4,12 +4,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class BurnLoseHpAction extends AbstractGameAction{
@@ -35,12 +33,6 @@ public class BurnLoseHpAction extends AbstractGameAction{
                         this.target.tint.color = Color.CHARTREUSE.cpy();
                         this.target.tint.changeColor(Color.WHITE.cpy());
                         this.target.damage(new DamageInfo(this.source, this.amount, DamageInfo.DamageType.NORMAL));
-//                        if (this.target.isDying) {
-//                            ++AbstractPlayer.poisonKillCount;
-//                            if (AbstractPlayer.poisonKillCount == 3 && AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.THE_SILENT) {
-//                                UnlockTracker.unlockAchievement("PLAGUE");
-//                            }
-//                        }
                     }
 
                     AbstractPower p = this.target.getPower("Burn");
