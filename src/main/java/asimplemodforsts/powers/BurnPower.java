@@ -54,7 +54,7 @@ public class BurnPower extends AbstractPower {
         }
 
         @Override
-        public void atStartOfTurn() {
+        public void atEndOfRound() {
             if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT &&
                     !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 flashWithoutSound();

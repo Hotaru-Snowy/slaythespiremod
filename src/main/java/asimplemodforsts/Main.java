@@ -7,6 +7,7 @@ import asimplemodforsts.cards.common.BlackHole;
 import asimplemodforsts.cards.common.LaserCannon;
 import asimplemodforsts.cards.common.LivShield;
 import asimplemodforsts.cards.common.PurityOath;
+import asimplemodforsts.cards.rare.ChaosOath;
 import asimplemodforsts.cards.rare.SignalFill;
 import asimplemodforsts.cards.uncommon.CombatSupport;
 import asimplemodforsts.cards.uncommon.DivinePrayer;
@@ -77,6 +78,7 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
         BaseMod.addCard(new CombatSupport());
         BaseMod.addCard(new DivinePrayer());
         BaseMod.addCard(new PurityOath());
+        BaseMod.addCard(new ChaosOath());
 
     }
 
