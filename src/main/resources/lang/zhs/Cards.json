@@ -42,5 +42,9 @@
   "chaos_oath": {
     "NAME": "纷乱宣誓",
     "DESCRIPTION": " 红色信号 NL 对所有敌人造成 !D! 点伤害,同时自身受到 !M! 点伤害。 NL 三消 对敌人的伤害转为 火属性伤害 。"
+  },
+  "oath_in_silence": {
+    "NAME": "无声誓约",
+    "DESCRIPTION": " 黄色信号 NL 获得 !M! 点 力量 。 NL 三消 额外获得1点 敏捷 。"
   }
 }

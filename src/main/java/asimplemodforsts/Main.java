@@ -3,10 +3,7 @@ package asimplemodforsts;
 import asimplemodforsts.cards.basic.Defend_Pink;
 import asimplemodforsts.cards.basic.Dodge_Pink;
 import asimplemodforsts.cards.basic.Strike_Pink;
-import asimplemodforsts.cards.common.BlackHole;
-import asimplemodforsts.cards.common.LaserCannon;
-import asimplemodforsts.cards.common.LivShield;
-import asimplemodforsts.cards.common.PurityOath;
+import asimplemodforsts.cards.common.*;
 import asimplemodforsts.cards.rare.ChaosOath;
 import asimplemodforsts.cards.rare.SignalFill;
 import asimplemodforsts.cards.uncommon.CombatSupport;
@@ -79,6 +76,7 @@ public class Main implements EditRelicsSubscriber , EditStringsSubscriber, EditC
         BaseMod.addCard(new DivinePrayer());
         BaseMod.addCard(new PurityOath());
         BaseMod.addCard(new ChaosOath());
+        BaseMod.addCard(new OathInSilence());
 
     }
 
