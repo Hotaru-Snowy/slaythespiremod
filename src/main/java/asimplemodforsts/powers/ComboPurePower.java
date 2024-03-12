@@ -16,7 +16,6 @@ public class ComboPurePower extends AbstractPower {
     private static final PowerStrings POWER_STRINGS = CardCrawlGame.languagePack.getPowerStrings("ComboPurePower");
     public static final String NAME =POWER_STRINGS.NAME;
     public static final String[] DESCRIPTIONS=POWER_STRINGS.DESCRIPTIONS;
-    private static int turnCount=0;
 
     public ComboPurePower(AbstractCreature owner){
         this.name=NAME;
@@ -24,7 +23,6 @@ public class ComboPurePower extends AbstractPower {
         this.owner = owner;
         this.amount = -1;
         this.updateDescription();
-        turnCount=1;
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(ResourceLib.powerImagePath(POWER_ID)), 0, 0, 32, 32);
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(ResourceLib.powerImageLargePath(POWER_ID)), 0, 0, 64, 64);
     }
@@ -37,8 +35,7 @@ public class ComboPurePower extends AbstractPower {
             addToBot(new RemoveSpecificPowerAction(owner, owner, ID));
         return damageAmount;
     }
-    public void atStartOfTurn() {   //在下一个回合开始后自动消除
-        if(turnCount==0)addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
-        else turnCount=0;
+    public void atEndOfTurn(boolean isPlayer) {   //在回合结束后自动消除
+        if(isPlayer)addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
     }
 }

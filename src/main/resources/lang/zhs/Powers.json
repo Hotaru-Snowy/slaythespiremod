@@ -23,11 +23,11 @@
   "DodgePower": {
     "NAME": "闪避",
     "DESCRIPTIONS": [
-      "本回合闪避一次伤害，如果成功闪避获得 超算空间 "
+      "本回合闪避一次伤害，如果成功闪避获得 闪避成功 "
     ]
   },
   "ComboPurePower": {
-    "NAME": "超算空间",
+    "NAME": "纯色信号球",
     "DESCRIPTIONS": [
       "本回合使用的下一个信号球直接视为 三消 "
     ]
@@ -57,6 +57,12 @@
     "DESCRIPTIONS": [
       "在下回合开始时，受到",
       "点灼烧伤害"
+    ]
+  },
+  "DodgeSucceedPower": {
+    "NAME": "闪避成功",
+    "DESCRIPTIONS": [
+      "下一次回合开始时，获得 纯色信号球 , 受到伤害时消失"
     ]
   }
 }

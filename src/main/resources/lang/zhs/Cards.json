@@ -13,7 +13,7 @@
   },
   "dodge_pink": {
     "NAME": "闪避",
-    "DESCRIPTION": "本回合闪避一次伤害，如果成功闪避获得 超算空间 。"
+    "DESCRIPTION": "本回合闪避一次伤害，如果完美闪避获得 超算空间 。"
   },
   "black_hole": {
     "NAME": "黑洞",

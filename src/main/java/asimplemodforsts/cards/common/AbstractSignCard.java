@@ -40,7 +40,7 @@ public abstract class AbstractSignCard extends CustomCard {
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         for(AbstractPower p : AbstractDungeon.player.powers){
-            if(p.ID.equals(SIGNPOWER)  && p.amount==3 || p.ID.equals("ComboPurePower")){
+            if(p.ID.equals(SIGNPOWER)  && p.amount==2 || p.ID.equals("ComboPurePower")){
                 try {
                     this.glowColor = (Color) Color.class.getDeclaredField(SIGNCOLOR.toUpperCase()).get(Color.class);
                 } catch (NoSuchFieldException | IllegalAccessException e) {

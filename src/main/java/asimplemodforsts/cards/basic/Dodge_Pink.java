@@ -17,7 +17,7 @@ public class Dodge_Pink extends CustomCard {
     private static final String NAME = cardStrings.NAME;
     private static final String IMGPATH = ResourceLib.cardImagePath(ID);
     private static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = 2;
+    private static final int COST = 3;
 
     public Dodge_Pink() {
         super(ID, NAME, IMGPATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.Liv_COLOR, CardRarity.BASIC, CardTarget.SELF);
@@ -27,7 +27,7 @@ public class Dodge_Pink extends CustomCard {
     public void upgrade() {
         if(!upgraded){
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(2);
         }
     }
 

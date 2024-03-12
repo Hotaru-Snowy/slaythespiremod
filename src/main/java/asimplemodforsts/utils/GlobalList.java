@@ -1,8 +1,8 @@
 package asimplemodforsts.utils;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class GlobalList {
-    public static final List<String> SignColorList = new ArrayList<String>();
+    public static final Set<String> SignColorList = new HashSet<>();
 }
